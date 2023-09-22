@@ -2,10 +2,10 @@
 
 ## Contents
 
-- [About]()
-- [Use cases]()
+- [About](https://github.com/border-trade-demonstrators/btd-1#about)
+- [Use cases](https://github.com/border-trade-demonstrators/btd-1#use-cases)
 - [Paticipants](https://github.com/border-trade-demonstrators/btd-1#participants)
-- [Required goods categories]()
+- [Required goods categories](https://github.com/border-trade-demonstrators/btd-1#required-goods-categories)
 - [Required capabilities](https://github.com/border-trade-demonstrators/btd-1#required-capabilities)
 
 ## About
