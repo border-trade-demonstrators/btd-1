@@ -16,7 +16,27 @@ PHAs will undertake a number of checks at the border (e.g. identity and physical
 
 ### Use case 1
 
-The signals outlining the business details and the nature of the non-compliance generated in this process will enable the updating of the risk models and targeted risk interventions. Sharing details of business non-compliance efficiently to all relevant border agencies across the country would help mitigate negative impacts of potential port shopping (traders avoiding targeted controls due to local intelligence not picking up historic non-compliance occuring at other ports) or traders using triangular trade routes to avoid controls (where goods real origin, which dictates whether controls are applicable or not, is obscured). There might be some quicker wins with this use case by linking with existing systems or systems in development.
+PHA will request a precise selection of fields (e.g. commodity code, country of origin, provider-mapping to SoR UUID, ETA if possible, human readable description of goods) from an EoT SoR which will be posted on to ISN messaging infrastructure from the EoT operators ISN site via either multipart form data or JSON authenticated via Oauth Bearer token.
+
+PHA may receive signal information via a number of CO BIT supplied ISN interoperability options including:
+- dashboard
+- RSS
+- vanilla JSON feed
+
+Signals will be prioritised according to a local model per PHA/FSA/Defra requirements and will have an expiry date to ensure information accuracy.
+
+
+PHA will close a feedback loop by transmitting information to selected BTD participants indicating whether the information was useful, not useful and what the result of the intervention was - this information will be **anonymised**.
+
+### Use case 2
+
+Interventions inititated through processing pre-notification signals will yield information outlining business details and the nature of any non-compliance .This information will enable the updating of risk models and targeted risk interventions locally.
+
+Sharing this non compliance efficiently to all relevant border agencies across the country will help mitigate negative impacts of potential port shopping  (traders avoiding targeted controls due to local intelligence not picking up historic non-compliance occuring at other ports) or traders using triangular trade routes to avoid controls (where goods real origin, which dictates whether controls are applicable or not, is obscured).
+
+Where appropriate it may be useful to share examples of non compliance such as incorrect goods information with supply chain actors or other jurisdictions to reduce delay and administrative cost and increase predictability of future goods movements involving these actors.
+
+There will likely be some quicker wins with this use case by linking with existing systems or systems in development.
 
 ## Participants
 
