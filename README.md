@@ -30,7 +30,7 @@ PHA will close a feedback loop by transmitting information to selected BTD parti
 
 ### Use case 2
 
-Interventions inititated through processing pre-notification signals will yield information outlining business details and the nature of any non-compliance .This information will enable the updating of risk models and targeted risk interventions locally.
+Interventions inititated through processing pre-notification signals will yield information outlining business details and the nature of any non-compliance. This information will enable the updating of risk models and targeted risk interventions locally.
 
 Sharing this non compliance efficiently to all relevant border agencies across the country will help mitigate negative impacts of potential port shopping  (traders avoiding targeted controls due to local intelligence not picking up historic non-compliance occuring at other ports) or traders using triangular trade routes to avoid controls (where goods real origin, which dictates whether controls are applicable or not, is obscured).
 
