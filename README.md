@@ -60,3 +60,14 @@ N/A
 - Multilateral share (Collaboration Agreement) form of governance framework for interested parties
 - Possibility of access to underlying SoR supply chain data if needed
 
+## Mapping to EoT report content and recommendations
+
+- [Report section 5](https://www.gov.uk/government/publications/the-ecosystem-of-trust-evaluation-report-2023/the-ecosystem-of-trust-evaluation-report-august-2023-html#measuring-the-value-of-an-eot-model): Overview of the UK biosecurity regimes - pre-notification
+- [Report section 4](https://www.gov.uk/government/publications/the-ecosystem-of-trust-evaluation-report-2023/the-ecosystem-of-trust-evaluation-report-august-2023-html#the-ecosystem-of-trust-model): usecases
+- [Report section 6 B](https://www.gov.uk/government/publications/the-ecosystem-of-trust-evaluation-report-2023/the-ecosystem-of-trust-evaluation-report-august-2023-html#recommendations-for-how-we-address-the-challenges-to-eot-adoption): Signals, Collab Agreement
+
+
+## Timeline
+
+BTD 1 will run from an introductory internal User Research session week beginning 25 September for approximately 8 weeks.
+
