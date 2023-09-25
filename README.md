@@ -7,6 +7,8 @@
 - [Paticipants](https://github.com/border-trade-demonstrators/btd-1#participants)
 - [Required goods categories](https://github.com/border-trade-demonstrators/btd-1#required-goods-categories)
 - [Required capabilities](https://github.com/border-trade-demonstrators/btd-1#required-capabilities)
+- [Mapping to report content and recommendations](https://github.com/border-trade-demonstrators/btd-1#mapping-to-eot-report-content-and-recommendations)
+- [Timeline](https://github.com/border-trade-demonstrators/btd-1#timeline)
 
 ## About
 
