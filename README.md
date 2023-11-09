@@ -79,5 +79,5 @@ TODO: from user research sessions and workshops
 
 ## Timeline
 
-BTD 1 will run from an introductory internal User Research session week beginning 25 September for approximately 8 weeks.
+BTD 1 will run for approximately 8 weeks. Start date TBC.
 
