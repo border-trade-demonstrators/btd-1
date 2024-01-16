@@ -10,6 +10,7 @@
 - [Required goods categories](https://github.com/border-trade-demonstrators/btd-1#required-goods-categories)
 - [Required capabilities](https://github.com/border-trade-demonstrators/btd-1#required-capabilities)
 - [Mapping to report content and recommendations](https://github.com/border-trade-demonstrators/btd-1#mapping-to-eot-report-content-and-recommendations)
+- [Next steps](https://github.com/border-trade-demonstrators/btd-1#next-steps)
 - [Deliverables](https://github.com/border-trade-demonstrators/btd-1#deliverables)
 - [Timeline](https://github.com/border-trade-demonstrators/btd-1#timeline)
 
@@ -72,6 +73,10 @@ For detail see the [use cases](https://github.com/border-trade-demonstrators/btd
 - [Report section 5](https://www.gov.uk/government/publications/the-ecosystem-of-trust-evaluation-report-2023/the-ecosystem-of-trust-evaluation-report-august-2023-html#measuring-the-value-of-an-eot-model): Overview of the UK biosecurity regimes - pre-notification
 - [Report section 4](https://www.gov.uk/government/publications/the-ecosystem-of-trust-evaluation-report-2023/the-ecosystem-of-trust-evaluation-report-august-2023-html#the-ecosystem-of-trust-model): usecases
 - [Report section 6 B](https://www.gov.uk/government/publications/the-ecosystem-of-trust-evaluation-report-2023/the-ecosystem-of-trust-evaluation-report-august-2023-html#recommendations-for-how-we-address-the-challenges-to-eot-adoption): Signals, Collab Agreement
+
+## Next steps
+
+We are currently in discovery and will be running a series of informal user research workshops. We will let you know when sessions are being scheduled.
 
 ## Deliverables
 
