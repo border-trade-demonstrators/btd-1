@@ -22,7 +22,7 @@ PHAs will undertake a number of checks at the border (e.g. identity and physical
 
 ### Use case 1
 
-PHA will request a precise selection of fields (e.g. commodity code, country of origin, provider-mapping which provides a link to supply chain data in the underlying EoT product System of Record 'SoR', container number, trailer number seal id, ETA if possible, human readable description of goods) from an EoT SoR which will be posted on to ISN messaging infrastructure from the EoT operators ISN site via either multipart form data or JSON authenticated via Oauth 2 Bearer token.
+PHA will request a precise selection of fields (e.g. commodity code, country of origin, provider-mapping which provides a link to supply chain data in the underlying EoT product System of Record 'SoR', container number, trailer number, seal id, ETA if possible, human readable description of goods) from an EoT SoR which will be posted on to ISN messaging infrastructure from the EoT operators ISN site via either multipart form data or JSON authenticated via Oauth 2 Bearer token.
 
 PHA may receive signal information via a number of CO BIT supplied ISN interoperability options including:
 - dashboard
