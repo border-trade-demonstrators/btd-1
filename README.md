@@ -43,7 +43,32 @@ A draft of the [signal payload](https://github.com/information-sharing-networks/
 | Country of origin | Country goods/sample originated from | ISO3166 (E.G. GB) | Required |
 | TBC Container number | The goods container number | TBC | Optional |
 | TBC Trailer number | Trailer number if relevant/available | TBC | Optional |
-| TBC Seal ID | A seal identifier | TBC | Optional | 
+| TBC Seal ID | A seal identifier | TBC | Optional |
+
+An example of a pre-notification signal could therefore look something like the below:
+
+```clojure
+{
+  :provider "organisation-a.my-example.xyz"
+  :start "2024-01-10T16:51:51.379676Z" ; N.B. can be used to indicate an ETA
+  :end "2024-01-20T18:00:00Z"
+  :published "2024-01-08T12:51:51.379072Z"
+  :signalId "704e851a-9ab4-40d6-b995-765f64104072"
+  :correlationId "734713bc04"
+  :category "a-useful-category"
+  :object "Brazil nuts"
+  :predicate "moving to PortA"
+  :providerMapping {
+    :id "804e851b-9ab4-40d6-b995-765f64104072"
+    :uri "https://uri-to-system-which-provided.io/xyz/"
+  }
+  :payload {
+    :cnCode "a-cn-code"
+    :countryOfOrigin "GB"
+    :commodityDescription "Brazil nuts"
+    ; N.B. potentially container number and other fields here
+  }
+}
 
 ### Use case 2
 
