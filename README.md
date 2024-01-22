@@ -34,6 +34,17 @@ Signals will be prioritised according to a local model per PHA/FSA/Defra require
 
 PHA will close a feedback loop by transmitting information to selected BTD participants (initially just CO) indicating whether the information was useful, not useful and what the result of the intervention was - this information will be **anonymised**. This feedback loop will work as part of the evaluation.
 
+A draft of the [signal payload](https://github.com/information-sharing-networks/signals#example-3---a-signal-and-its-metadata-which-is-associated-to-a-payload-of-information-in-a-given-domain) fields and suggested optionality is outlined below.
+
+| Field name | Description | Data type | Optionality |
+| --- | --- | --- | --- |
+| Commodity code | The specific commodity code for the goods | String | Required |
+| Commodity description | Plain text description of goods | String | Required |
+| Country of origin | Country goods/sample originated from | ISO3166 (E.G. GB) | Required |
+| TBC Container number | The goods container number | TBC | Optional |
+| TBC Trailer number | Trailer number if relevant/available | TBC | Optional |
+| TBC Seal ID | A seal identifier | TBC | Optional | 
+
 ### Use case 2
 
 Interventions inititated through processing pre-notification signals will yield information outlining business details and the nature of any non-compliance. This information will enable the updating of risk models and better targeted risk interventions locally.
