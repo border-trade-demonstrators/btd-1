@@ -26,8 +26,9 @@ PHA will request a precise selection of fields (e.g. commodity code, country of 
 
 PHA may receive signal information via a number of CO BIT supplied ISN interoperability options including:
 - dashboard
-- RSS
 - vanilla JSON feed
+- Server Sent Event (SSE) push (coming soon)
+- RSS or feed (potentially if required)
 
 Signals will be prioritised according to a local model per PHA/FSA/Defra requirements and will have an expiry date to ensure information accuracy.
 
