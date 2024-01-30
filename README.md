@@ -42,8 +42,8 @@ A draft of the [signal payload](https://github.com/information-sharing-networks/
 | Commodity code | The specific commodity code for the goods | String | Required |
 | Commodity description | Plain text description of goods | String | Required |
 | Country of origin | Country goods/sample originated from | ISO3166 (E.G. GB) | Required |
-| TBC Container number | The goods container number | TBC | Optional |
-| TBC Trailer number | Trailer number if relevant/available | TBC | Optional |
+| Unit identifier | The identifier for an incoming unit | May be one of a set of identifiers (e.g. container number, trailer number, VRN, TRN etc) | Required |
+| Unit type | The type of an incoming unit | Enumeration (e.g. Container, Trailer, TruckAccompanied etc) | Required |
 | TBC Seal ID | A seal identifier | TBC | Optional |
 
 An example of a pre-notification signal could therefore look something like the below:
@@ -67,7 +67,8 @@ An example of a pre-notification signal could therefore look something like the 
     :cnCode "a-cn-code"
     :countryOfOrigin "GB"
     :commodityDescription "Brazil nuts"
-    ; N.B. potentially container number and other fields here
+    :unitIdentifier "TBC containerNumberAB12"
+    :unitType "container"
   }
 }
 
