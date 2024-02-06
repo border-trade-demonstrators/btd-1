@@ -12,7 +12,7 @@ At the time of writing signal examples below are compatible with 0.3.34+ of the 
 A first ISN participant creates their initial signal as below (N.B. swap out cnCode, unitId and other fields for sensible values etc:
 
 ```bash
-curl -i -X POST -H "Authorization: Bearer YOUR-TOKEN" -d h=event -d "name=brazil nuts" -d "summary=moving to PortA" -d category=domain -d "description=cnCode=cnNuts^countryOfOrigin=GB^unitId=134149^unitType=container^mode=RORO" https://btd-1-pha.my-example.xyz/micropub
+curl -i -X POST -H "Authorization: Bearer YOUR-TOKEN" -d h=event -d "name=brazil nuts" -d "summary=moving to PortA" -d category=domain -d "description=cnCode=cnNuts^countryOfOrigin=GB^unitId=134149^unitType=container^mode=RORO" https://your-site.my-example.xyz/micropub
 ```
 
 As an illustration the signal created might look something like:
@@ -26,6 +26,6 @@ and in this case it has a correlation-id 0e1fbb0a-f212-44c9-b546-da3014ba1624
 A second participant can use the correlation-id from the original signal to attach an opinion to it:
 
 ```bash
-curl -i -X POST -H "Authorization: Bearer YOUR-TOKEN" -d h=event -d "name=nuts and bolts" -d "summary=reclassified as nuts and bolts" -d category=domain -d "description=correlation-id=0e1fbb0a-f212-44c9-b546-da3014ba1624^cnCode=cnNutsBolts^countryOfOrigin=GB^unitId=134149^unitType=container^mode=RORO" https://btd-2-iot.my-example.xyz/micropub
+curl -i -X POST -H "Authorization: Bearer YOUR-TOKEN" -d h=event -d "name=nuts and bolts" -d "summary=reclassified as nuts and bolts" -d category=domain -d "description=correlation-id=0e1fbb0a-f212-44c9-b546-da3014ba1624^cnCode=cnNutsBolts^countryOfOrigin=GB^unitId=134149^unitType=container^mode=RORO" https://your-site.my-example.xyz/micropub
 ```
 In the web dashboard this signal will be attached to the original in a list (it will be indented indicated there is a thread).
