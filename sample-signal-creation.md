@@ -1,6 +1,9 @@
 # Signal creation examples
 
+N.B. Sample signals listed on this page use Extensible Data Notation (EDN) as a format this is to simplify them and provide full semantics e.g. sets as distinct from vectors or other collection types. The API will in fact by default return JSON.
+
 ## About
+
 In order to create [signals](https://github.com/information-sharing-networks/signals) within the ISN a participant may use their participant site and its API.
 Signals are created using an Indieweb 'event' post type by calling the ISN site 'micropub' endpoint internally this creates a 'signal' from the information-sharing-network signals spec.
 
@@ -20,7 +23,26 @@ curl -i -X POST -H "Authorization: Bearer YOUR-TOKEN" -d h=event -d "name=brazil
 
 As an illustration the signal created might look something like:
 
-TBD
+```clojure
+{
+ :object "brazil nuts"
+ :predicate "moving to PortA"
+ :provider "sample-provider.my-example.xyz"
+ :signalId "ba37897c-d8b8-49c9-a7ba-cfadbadcbec4"
+ :correlation-id "b0302884-296a-4a1e-bc09-e07db93e65b9"
+ :publishedDate "2024-02-14"
+ :publishedDateTime "2024-02-14T22:13:41.371194Z"
+ :end "2024-02-21T22:13:41.372409Z"
+ :category #{"domain" "isn@sample-isn.my-example.xyz"}
+ :payload {
+   :cnCode "cnNuts"
+   :countryOfOrigin "GB"
+   :unitId "134149"
+   :unitType "container"
+   :mode "RORO"
+ }
+}
+```
 
 ### Creating a signal specifying an ETA for arrival at port
 
@@ -32,7 +54,27 @@ curl -i -X POST -H "Authorization: Bearer YOUR-TOKEN" -d h=event -d "name=brazil
 
 As an illustration the signal created might look something like:
 
-TBD
+```clojure
+{
+ :object "brazil nuts"
+ :predicate "moving to PortA"
+ :provider "sample-provider.my-example.xyz"
+ :signalId "ba37897c-d8b8-49c9-a7ba-cfadbadcbec4"
+ :correlation-id "b0302884-296a-4a1e-bc09-e07db93e65b9"
+ :publishedDate "2024-02-14"
+ :publishedDateTime "2024-02-14T22:13:41.371194Z"
+ :start "2024-03-07T09:00:00Z"
+ :end "2024-02-21T22:13:41.372409Z"
+ :category #{"domain" "isn@sample-isn.my-example.xyz"}
+ :payload {
+   :cnCode "cnNuts"
+   :countryOfOrigin "GB"
+   :unitId "134149"
+   :unitType "container"
+   :mode "RORO"
+ }
+}
+```
 
 ### Creating a workflow with multiple signals on the same thread
 
