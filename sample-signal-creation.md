@@ -9,7 +9,7 @@ The BTD-1 domain is pre-notifications and compliance.
 At the time of writing signal examples below are compatible with 0.4.56+ of the ISN reference implementation.
 
 ### Creating an original BTD-1 relevant signal
-A first ISN participant creates their initial [spec compliant signal](https://github.com/information-sharing-networks/signals) as below (N.B. swap out cnCode, unitId and other fields for sensible values etc:
+A first ISN participant creates their initial [spec compliant signal](https://github.com/information-sharing-networks/signals) as below (N.B. swap out cnCode, unitId and other fields for relevant values etc:
 
 ```bash
 curl -i -X POST -H "Authorization: Bearer YOUR-TOKEN" -d h=event -d "name=brazil nuts" -d "summary=moving to PortA" -d category=domain -d category=isn@sample-isn.my-example.xyz -d "description=cnCode=cnNuts^countryOfOrigin=GB^unitId=134149^unitType=container^mode=RORO" https://your-site.my-example.xyz/micropub
