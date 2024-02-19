@@ -8,7 +8,7 @@ In order to create [signals](https://github.com/information-sharing-networks/sig
 Signals are created using an Indieweb 'event' post type by calling the ISN site 'micropub' endpoint internally this creates a 'signal' from the information-sharing-network signals spec.
 
 ## Sample signals
-The BTD-1 domain is pre-notifications and compliance.
+The BTD 1 domain is pre-notifications and compliance.
 At the time of writing signal examples below are compatible with 0.4.56+ of the ISN reference implementation.
 
 ### Creating an original simple BTD 1 relevant signal
