@@ -27,6 +27,17 @@ It is also possible to create a signal by passing JSON to the micropub endpoint:
 curl -i -X POST -H "Content-Type: application/json" -H "Authorization: Bearer YOUR-TOKEN" -d '{"h": "event", "name": "brazil nuts", "summary": "moving to PortA", "category": ["pre-notification", "isn@btd-1.info-sharing.network"], "description": "cnCode=cnNuts^countryOfOrigin=GB^unitId=134149^unitType=container^mode=RORO"}' https://your-site.my-example.xyz/micropub
 ```
 
+> [!NOTE]
+>A successful signal will generate a response with a 201 status code.
+
+> [!WARNING]
+>When creating a signal and problems occur a number of errors will be displayed in the response to assit the user in identifying the cause of the issue:
+
+- Error code 400 - indicates the user has not complied with the specification required to make a signal and may need to amend the request.
+
+- Error code 401 - the user's access token is invalid. You can get the valid access token from the 'Account' tab in you ISN participant site. The valid token should replace the words YOUR-TOKEN in the "Authorization: Bearer YOUR-TOKEN" in the request.
+
+
 As an illustration the signal created might look something like:
 
 ```clojure
