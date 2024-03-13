@@ -37,18 +37,18 @@ PHA will close a feedback loop by transmitting information to selected BTD parti
 
 A draft of the [signal payload](https://github.com/information-sharing-networks/signals#example-3---a-signal-and-its-metadata-which-is-associated-to-a-payload-of-information-in-a-given-domain) fields and suggested optionality is outlined below.
 
-| Field name | Description | Data type | Optionality |
-| --- | --- | --- | --- |
-| Commodity code(s) | The specific commodity code for the goods | (Multiple) smallest 4 digits String | Required |
-| Commodity description | Plain text description of goods | String | Required |
-| Country of origin | Country goods/sample originated from | ISO3166 (E.G. GB) | Required |
-| Unit identifier | The identifier for an incoming unit | May be one of a set of identifiers (e.g. container number, trailer registration number, VRN, TRN etc) | Required |
+| Field name | Description | Data type | Optionality | Notes |
+| --- | --- | --- | --- | --- |
+| Commodity code(s) | Specific commodity codes for the goods | (Multiple cnCodes where the resolution or no. digits varies depending on how much is known about the goods at any time) smallest 4 digits String | Required | |
+| Commodity description | Plain text description of goods | String | Required | If there are multiple cnCodes how useful is this field ? |
+| Country of origin | Country goods/sample originated from | ISO3166 (E.G. GB) | Required | |
+| Unit identifier | The identifier for an incoming unit | May be one of a set of identifiers (e.g. container number, trailer registration number, VRN, TRN etc) | Required | |
 | Unit type | The type of an incoming unit | Enumeration (e.g. Container, TrailerRegistrationNUmber, TruckAccompanied etc) | Required |
-| TBC Seal ID | A seal identifier | TBC | Optional |
-| CHED Number | A CHED identifier | CHED-P or CHED-D | Optional |
-| Exporter EORI Number | TBC | TBC | Optional |
-| Importer EORI Number | TBC | TBC | Optional |
-| Mode | The goods movement mode | Enumeration (e.g. RORO,TBC) | Required |
+| TBC Seal ID | A seal identifier | TBC | Optional | |
+| CHED Number | A CHED identifier | CHED-P or CHED-D | Optional | |
+| Exporter EORI Number | TBC | TBC | Optional | Must not be provided if it pertains to a sole trader setup or similar - (consortia will need to guarantee they will not provide if this is the case) |
+| Importer EORI Number | TBC | TBC | Optional | Must not be provided if it pertains to a sole trader setup or similar - (consortia will need to guarantee they will not provide if this is the case) |
+| Mode | The goods movement mode | Enumeration (e.g. RORO,TBC) | Required | |
 
 An example of a pre-notification signal could therefore look something like the below:
 
