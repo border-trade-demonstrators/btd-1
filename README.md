@@ -39,13 +39,15 @@ A draft of the [signal payload](https://github.com/information-sharing-networks/
 
 | Field name | Description | Data type | Optionality |
 | --- | --- | --- | --- |
-| Commodity code | The specific commodity code for the goods | String | Required |
+| Commodity code(s) | The specific commodity code for the goods | (Multiple) smallest 4 digits String | Required |
 | Commodity description | Plain text description of goods | String | Required |
 | Country of origin | Country goods/sample originated from | ISO3166 (E.G. GB) | Required |
-| Unit identifier | The identifier for an incoming unit | May be one of a set of identifiers (e.g. container number, trailer number, VRN, TRN etc) | Required |
-| Unit type | The type of an incoming unit | Enumeration (e.g. Container, Trailer, TruckAccompanied etc) | Required |
+| Unit identifier | The identifier for an incoming unit | May be one of a set of identifiers (e.g. container number, trailer registration number, VRN, TRN etc) | Required |
+| Unit type | The type of an incoming unit | Enumeration (e.g. Container, TrailerRegistrationNUmber, TruckAccompanied etc) | Required |
 | TBC Seal ID | A seal identifier | TBC | Optional |
-| CHED ID | A CHED identifier | TBC | Optional |
+| CHED Number | A CHED identifier | CHED-P or CHED-D | Optional |
+| Exporter EORI Number | TBC | TBC | Optional |
+| Importer EORI Number | TBC | TBC | Optional |
 | Mode | The goods movement mode | Enumeration (e.g. RORO,TBC) | Required |
 
 An example of a pre-notification signal could therefore look something like the below:
