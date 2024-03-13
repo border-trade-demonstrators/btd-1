@@ -125,5 +125,4 @@ TODO: from user research sessions and workshops
 
 ## Timeline
 
-BTD 1 will run for approximately 8 weeks. Start date TBC.
-
+BTD 1 will run until approximately 8th April 2024 from mid March. Upon successful evaluation the EoT Toolkit (ISN machinery and Collaboration agreement may be used for free by any and all participants who choose to continue on. ISN machinery will need to be hosted either cooperatively on cloud infrastructure for participants or individually by participants per the hosting reqiurements.
