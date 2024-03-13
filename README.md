@@ -73,6 +73,7 @@ An example of a pre-notification signal could therefore look something like the 
     :importerEORI "EORI-imp-01"
   }
 }
+```
 
 ### Use case 2
 
