@@ -45,6 +45,7 @@ A draft of the [signal payload](https://github.com/information-sharing-networks/
 | Unit identifier | The identifier for an incoming unit | May be one of a set of identifiers (e.g. container number, trailer number, VRN, TRN etc) | Required |
 | Unit type | The type of an incoming unit | Enumeration (e.g. Container, Trailer, TruckAccompanied etc) | Required |
 | TBC Seal ID | A seal identifier | TBC | Optional |
+| CHED ID | A CHED identifier | TBC | Optional |
 | Mode | The goods movement mode | Enumeration (e.g. RORO,TBC) | Required |
 
 An example of a pre-notification signal could therefore look something like the below:
