@@ -61,7 +61,7 @@ An example of a pre-notification signal could therefore look something like the 
   :correlationId "734713bc04"
   :category #{"pre-notification" "isn@btd-1.info-sharing.network"}
   :object "Chicken plus Beef shipment"
-  :predicate "arriving at Port A on 2024-04-01"
+  :predicate "arriving at Port A with ETA 2024-04-01T15:00:00.00Z"
   :payload {
     :cnCodes #{"cn01" "cn02"} ; e.g. minimally resolved cncodes will be four characters/digits long (may be longer or more resolved)
     :countryOfOrigin "GB"
