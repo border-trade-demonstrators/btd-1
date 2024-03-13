@@ -42,8 +42,7 @@ A draft of the [signal payload](https://github.com/information-sharing-networks/
 | Commodity code(s) | Specific commodity codes for the goods | (Multiple cnCodes where the resolution or no. digits varies depending on how much is known about the goods at any time) smallest 4 digits String | Required | |
 | Commodity description | Plain text description of goods | String | Required | If there are multiple cnCodes how useful is this field ? |
 | Country of origin | Country goods/sample originated from | ISO3166 (E.G. GB) | Required | |
-| Unit identifier | The identifier for an incoming unit | May be one of a set of identifiers (e.g. container number, trailer registration number, VRN, TRN etc) | Required | |
-| Unit type | The type of an incoming unit | Enumeration (e.g. Container, TrailerRegistrationNUmber, TruckAccompanied etc) | Required |
+| Unit identification | A map identifiers and identifier types (as key/value pairs) for an incoming unit | May be multiples from a set of identifiers (e.g. container number, trailer registration number, VRN, TRN etc) | Required | |
 | TBC Seal ID | A seal identifier | TBC | Optional | |
 | CHED Number | A CHED identifier | CHED-P or CHED-D | Optional | |
 | Exporter EORI Number | TBC | TBC | Optional | Must not be provided if it pertains to a sole trader setup or similar - (consortia will need to guarantee they will not provide if this is the case) |
@@ -55,25 +54,23 @@ An example of a pre-notification signal could therefore look something like the 
 ```clojure
 {
   :provider "organisation-a.my-example.xyz"
-  :start "2024-01-10T16:51:51.379676Z" ; N.B. can be used to indicate an ETA
+  :start "2024-01-10T16:51:51.379676Z" ; Indicates an ETA
   :end "2024-01-20T18:00:00Z"
   :published "2024-01-08T12:51:51.379072Z"
   :signalId "704e851a-9ab4-40d6-b995-765f64104072"
   :correlationId "734713bc04"
-  :category "a-useful-category"
-  :object "Brazil nuts"
-  :predicate "moving to PortA"
-  :providerMapping {
-    :id "804e851b-9ab4-40d6-b995-765f64104072"
-    :uri "https://uri-to-system-which-provided.io/xyz/"
-  }
+  :category #{"pre-notification" "isn@btd-1.info-sharing.network"}
+  :object "Chicken plus Beef shipment"
+  :predicate "arriving at Port A on 2024-04-01"
   :payload {
-    :cnCode "a-cn-code"
+    :cnCodes #{"cn01" "cn02"} ; e.g. minimally resolved cncodes will be four characters/digits long (may be longer or more resolved)
     :countryOfOrigin "GB"
-    :commodityDescription "Brazil nuts"
-    :unitIdentifier "TBC containerNumberAB12"
-    :unitType "container"
+    :commodityDescription "Chicken 40%, beef 60%"
+    :chedNumber "CN010203" ; e.g. either a CHED-D or a CHED-P number
+    :unitIdentification {"containerNo123" :containerNumber "trailerRegNo123" :TrailerRegistrationNumber}
     :mode "RORO"
+    :exporterEORI "EORI-exp-01"
+    :importerEORI "EORI-imp-01"
   }
 }
 
