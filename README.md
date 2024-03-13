@@ -54,8 +54,8 @@ An example of a pre-notification signal could therefore look something like the 
 ```clojure
 {
   :provider "organisation-a.my-example.xyz"
-  :start "2024-01-10T16:51:51.379676Z" ; Indicates an ETA
-  :end "2024-01-20T18:00:00Z"
+  :start "2024-04-01T15:00:00.00Z" ; Indicates an ETA
+  :end "2024-04-20T18:00:00Z"
   :published "2024-01-08T12:51:51.379072Z"
   :signalId "704e851a-9ab4-40d6-b995-765f64104072"
   :correlationId "734713bc04"
@@ -63,7 +63,7 @@ An example of a pre-notification signal could therefore look something like the 
   :object "Chicken plus Beef shipment"
   :predicate "arriving at Port A with ETA 2024-04-01T15:00:00.00Z"
   :payload {
-    :cnCodes #{"cn01" "cn02"} ; e.g. minimally resolved cncodes will be four characters/digits long (may be longer or more resolved)
+    :cnCodes #{"cnchicken01" "cnbeef02"} ; e.g. minimally resolved cncodes will be four characters/digits long (may be longer or more resolved)
     :countryOfOrigin "GB"
     :commodityDescription "Chicken 40%, beef 60%"
     :chedNumber "CN010203" ; e.g. either a CHED-D or a CHED-P number
