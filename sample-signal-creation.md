@@ -15,6 +15,8 @@ At the time of writing signal examples below are compatible with 0.4.77+ of the 
 
 ISN participants create [spec compliant signals](https://github.com/information-sharing-networks/signals) by using their Participant Site API.
 
+Within the context of BTD 1 if the information is available to participants for a given goods movement it is possible to specify an ETA for arrival at destination port, this is useful information for the Port Health Authority team. An ETA can be specified using the 'start' field and can be included in the summary field as additional human readable information.
+
 The simplest possible BTD 1 relevant signal (using the x-www-form-urlencoded content type) would look something like the below (N.B. swap out cnCode, unitId and other fields for relevant values etc):
 
 ```bash
@@ -48,56 +50,30 @@ As an illustration the signal created might look something like:
 
 ```clojure
 {
- :object "brazil nuts"
- :predicate "moving to PortA"
- :provider "sample-provider.my-example.xyz"
- :signalId "ba37897c-d8b8-49c9-a7ba-cfadbadcbec4"
- :correlation-id "b0302884-296a-4a1e-bc09-e07db93e65b9"
- :publishedDate "2024-02-14"
- :publishedDateTime "2024-02-14T22:13:41.371194Z"
- :end "2024-02-21T22:13:41.372409Z"
- :category #{"pre-notification" "isn@btd-1.info-sharing.network"}
- :payload {
-   :cnCode "cnNuts"
-   :countryOfOrigin "GB"
-   :unitId "134149"
-   :unitType "container"
-   :mode "RORO"
- }
+  :provider "organisation-a.my-example.xyz"
+  :start "2024-04-01T15:00:00.00Z" ; Indicates an ETA
+  :end "2024-04-20T18:00:00Z"
+  :published "2024-01-08T12:51:51.379072Z"
+  :signalId "704e851a-9ab4-40d6-b995-765f64104072"
+  :correlationId "734713bc04"
+  :category #{"pre-notification" "isn@btd-1.info-sharing.network"}
+  :object "Chicken plus Beef shipment"
+  :predicate "arriving at Port A with ETA 2024-04-01T15:00:00.00Z"
+  :payload {
+    :cnCodes #{"cnchicken01" "cnbeef02"} ; e.g. minimally resolved cncodes will be four characters/digits long (may be longer or more resolved)
+    :countryOfOrigin "GB"
+    :commodityDescription "Chicken 40%, beef 60%"
+    :chedNumber "CN010203" ; e.g. either a CHED-D or a CHED-P number
+    ; N.B. unitIdentification is not exhaustive
+    :unitIdentification {:containerNumber "containerNo123" :trailerRegistrationNumber "trailerRegNo123"}
+    :mode "RORO"
+    :exporterEORI "EORI-exp-01"
+    :importerEORI "EORI-imp-01"
+  }
 }
 ```
 
-### Creating a signal specifying an ETA for arrival at port
 
-Within the context of BTD 1 if the information is available to participants for a given goods movement it is possible to specify an ETA for arrival at destination port, this is useful information for the Port Health Authority team. An ETA can be specified using the 'start' field as below:
-
-```bash
-curl -i -X POST -H "Authorization: Bearer YOUR-TOKEN" -d h=event -d "name=brazil nuts" -d "summary=moving to PortA" -d category=pre-notification -d category=isn@btd-1.info-sharing.network -d start=2024-03-07T09:00:00Z -d "description=cnCode=cnNuts^countryOfOrigin=GB^unitId=134149^unitType=container^mode=RORO" https://your-site.my-example.xyz/micropub
-```
-
-As an illustration the signal created might look something like:
-
-```clojure
-{
- :object "brazil nuts"
- :predicate "moving to PortA"
- :provider "sample-provider.my-example.xyz"
- :signalId "ba37897c-d8b8-49c9-a7ba-cfadbadcbec4"
- :correlation-id "b0302884-296a-4a1e-bc09-e07db93e65b9"
- :publishedDate "2024-02-14"
- :publishedDateTime "2024-02-14T22:13:41.371194Z"
- :start "2024-03-07T09:00:00Z"
- :end "2024-02-21T22:13:41.372409Z"
- :category #{"pre-notification" "isn@btd-1.info-sharing.network"}
- :payload {
-   :cnCode "cnNuts"
-   :countryOfOrigin "GB"
-   :unitId "134149"
-   :unitType "container"
-   :mode "RORO"
- }
-}
-```
 
 ### Creating a workflow with multiple signals on the same thread
 
