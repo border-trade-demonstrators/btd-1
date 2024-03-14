@@ -7,7 +7,7 @@
     :signals {
       :pre-notification {
         :description "Indicators about incoming goods movements"
-        :list-payload-keys [:cnCode :countryOfOrigin]
+        :list-payload-keys [:cnCodes :countryOfOrigin]
         :expiry-days-from-now 14
       }
     }
