@@ -55,7 +55,7 @@ As an illustration the signal created might look something like:
   :end "2024-04-20T18:00:00Z"
   :published "2024-01-08T12:51:51.379072Z"
   :signalId "704e851a-9ab4-40d6-b995-765f64104072"
-  :correlationId "734713bc04"
+  :correlationId "734713bc04-valid-uuid-here-xxxx"
   :category #{"pre-notification" "isn@btd-1.info-sharing.network"}
   :object "Chicken plus Beef shipment"
   :predicate "arriving at Port A with ETA 2024-04-01T15:00:00.00Z"
@@ -73,8 +73,6 @@ As an illustration the signal created might look something like:
 }
 ```
 
-
-
 ### Creating a workflow with multiple signals on the same thread
 
 #### Creating the original signal
@@ -85,17 +83,15 @@ It is possible to create a 'golden thread' of related signals. An original signa
 curl -i -X POST -H "Authorization: Bearer YOUR-TOKEN" -d h=event -d "name=brazil nuts" -d "summary=moving to PortA" -d category=pre-notification -d category=isn@btd-1.info-sharing.network -d "description=cnCode=cnNuts^countryOfOrigin=GB^unitId=134149^unitType=container^mode=RORO" https://your-site.my-example.xyz/micropub
 ```
 
-As an illustration the signal created might look something like:
+As an illustration the signal created might look something like the previous example response.
 
-TBD
-
-and in this case it has a correlation-id 0e1fbb0a-f212-44c9-b546-da3014ba1624
+and in this case it has a correlation-id '734713bc04-valid-uuid-here-xxxx'.
 
 #### Attaching a second signal to the original to share an opinion
 
-A second participant can use the correlation-id from the original signal to attach an opinion to it:
+A second participant can use the correlation-id from the original signal to attach an opinion to it in the form of a second signal:
 
 ```bash
-curl -i -X POST -H "Authorization: Bearer YOUR-TOKEN" -d h=event -d "name=nuts and bolts" -d "summary=reclassified as nuts and bolts" -d category=pre-notification -d category=isn@btd-1.info-sharing.network -d "description=correlation-id=0e1fbb0a-f212-44c9-b546-da3014ba1624^cnCode=cnNutsBolts^countryOfOrigin=GB^unitId=134149^unitType=container^mode=RORO" https://your-site.my-example.xyz/micropub
+curl -i -X POST -H "Authorization: Bearer YOUR-TOKEN" -d h=event -d "name=nuts and bolts" -d "summary=reclassified as nuts and bolts" -d category=pre-notification -d category=isn@btd-1.info-sharing.network -d "description=correlation-id=734713bc04-valid-uuid-here-xxxx^cnCode=cnNutsBolts^countryOfOrigin=GB^unitId=134149^unitType=container^mode=RORO" https://your-site.my-example.xyz/micropub
 ```
 In the web dashboard this signal will be attached to the original in a list (it will be indented indicated there is a thread). When retrieving signals with the API they are grouped by correlation-id to preserve this relationship.
