@@ -9,7 +9,7 @@ Signals are created using an Indieweb 'event' post type by calling the ISN site 
 
 ## Sample signals
 The BTD 1 domain is pre-notifications and compliance.
-At the time of writing signal examples below are compatible with 0.4.77+ of the ISN reference implementation.
+At the time of writing signal examples below are compatible with 0.8.0+ of the ISN reference implementation.
 
 ### Creating an original simple BTD 1 relevant signal
 
