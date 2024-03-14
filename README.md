@@ -67,7 +67,7 @@ An example of a pre-notification signal could therefore look something like the 
     :countryOfOrigin "GB"
     :commodityDescription "Chicken 40%, beef 60%"
     :chedNumber "CN010203" ; e.g. either a CHED-D or a CHED-P number
-    :unitIdentification {"containerNo123" :containerNumber "trailerRegNo123" :TrailerRegistrationNumber}
+    :unitIdentification {:containerNumber "containerNo123" :trailerRegistrationNumber "trailerRegNo123"}
     :mode "RORO"
     :exporterEORI "EORI-exp-01"
     :importerEORI "EORI-imp-01"
