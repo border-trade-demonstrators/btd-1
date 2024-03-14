@@ -42,7 +42,7 @@ A draft of the [signal payload](https://github.com/information-sharing-networks/
 | Commodity code(s) | Specific commodity codes for the goods | (Multiple cnCodes where the resolution or no. digits varies depending on how much is known about the goods at any time) smallest 4 digits String | Required | |
 | Commodity description | Plain text description of goods | String | Required | If there are multiple cnCodes how useful is this field ? |
 | Country of origin | Country goods/sample originated from | ISO3166 (E.G. GB) | Required | |
-| Unit identification | A map identifiers and identifier types (as key/value pairs) for an incoming unit | May be multiples from a set of identifiers (e.g. container number, trailer registration number, VRN, TRN etc) | Required | |
+| Unit identification | A map of identifiers and identifier types (as key/value pairs) for an incoming unit | May be multiples from a set of identifiers (e.g. container number, trailer registration number, VRN, TRN etc) | Required | |
 | TBC Seal ID | A seal identifier | TBC | Optional | |
 | CHED Number | A CHED identifier | CHED-P or CHED-D | Optional | |
 | Exporter EORI Number | TBC | TBC | Optional | Must not be provided if it pertains to a sole trader setup or similar - (consortia will need to guarantee they will not provide if this is the case) |
