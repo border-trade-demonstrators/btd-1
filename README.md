@@ -44,7 +44,7 @@ A draft of the [signal payload](https://github.com/information-sharing-networks/
 | Country of origin | Country goods/sample originated from | ISO3166 (E.G. GB) | Required | |
 | Unit identification | A map of identifiers and identifier types (as key/value pairs) for an incoming unit | May be multiples from a set of identifiers (e.g. container number, trailer registration number, VRN, TRN etc) | Required | |
 | TBC Seal ID | A seal identifier | TBC | Optional | |
-| CHED Number | A CHED identifier | CHED-P or CHED-D | Optional | |
+| CHED Number | A set of CHED identifier | CHED-P or CHED-D | Optional | |
 | Exporter EORI Number | TBC | TBC | Optional | Must not be provided if it pertains to a sole trader setup or similar - (consortia will need to guarantee they will not provide if this is the case) |
 | Importer EORI Number | TBC | TBC | Optional | Must not be provided if it pertains to a sole trader setup or similar - (consortia will need to guarantee they will not provide if this is the case) |
 | Mode | The goods movement mode | Enumeration (e.g. RORO,TBC) | Required | |
@@ -66,7 +66,7 @@ An example of a pre-notification signal could therefore look something like the 
     :cnCodes #{"cnchicken01" "cnbeef02"} ; e.g. minimally resolved cncodes will be four characters/digits long (may be longer or more resolved)
     :countryOfOrigin "GB"
     :commodityDescription "Chicken 40%, beef 60%"
-    :chedNumber "CN010203" ; e.g. either a CHED-D or a CHED-P number
+    :chedNumber #{"CN010203"} ; e.g. either a CHED-D or a CHED-P number
     ; N.B. unitIdentification is not exhaustive
     :unitIdentification {:containerNumber "containerNo123" :trailerRegistrationNumber "trailerRegNo123"}
     :mode "RORO"
