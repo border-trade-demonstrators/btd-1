@@ -20,19 +20,19 @@ Within the context of BTD 1 if the information is available to participants for 
 The simplest possible BTD 1 relevant signal (using the x-www-form-urlencoded content type) would look something like the below (N.B. swap out cnCode, unitId and other fields for relevant values etc):
 
 ```bash
-curl -i -X POST -H "Authorization: Bearer YOUR-TOKEN" -d h=event -d "name=brazil nuts" -d start="2024-03-25T15:00:00.00Z" -d "summary=moving to PortA with ETA 2024-03-25T15:00:00.00Z" -d category=pre-notification -d category=isn@btd-1.info-sharing.network -d "description=cnCode=cnNuts^countryOfOrigin=GB^unitId=134149^unitType=container^mode=RORO" https://your-site.my-example.xyz/micropub
+curl -i -X POST -H "Authorization: Bearer YOUR-TOKEN" -d h=event -d "name=brazil nuts" -d start="2024-03-25T15:00:00.00Z" -d "summary=moving to PortA with ETA 2024-03-25T15:00:00.00Z" -d category=pre-notification -d category=isn@btd-1.info-sharing.network -d "description=cnCode=cnNuts^countryOfOrigin=GB^mode=RORO" https://your-site.my-example.xyz/micropub
 ```
 
 It is also possible to create a signal by passing JSON to the micropub endpoint:
 
 ```bash
-curl -i -X POST -H "Content-Type: application/json" -H "Authorization: Bearer YOUR-TOKEN" -d '{"h": "event", "name": "brazil nuts", "start": "2024-03-25T15:00:00.00Z" "summary": "moving to PortA with ETA 2024-03-25T15:00:00.00Z", "category": ["pre-notification", "isn@btd-1.info-sharing.network"], "description": "cnCode=cnNuts^countryOfOrigin=GB^unitId=134149^unitType=container^mode=RORO"}' https://your-site.my-example.xyz/micropub
+curl -i -X POST -H "Content-Type: application/json" -H "Authorization: Bearer YOUR-TOKEN" -d '{"h": "event", "name": "brazil nuts", "start": "2024-03-25T15:00:00.00Z" "summary": "moving to PortA with ETA 2024-03-25T15:00:00.00Z", "category": ["pre-notification", "isn@btd-1.info-sharing.network"], "description": "cnCode=cnNuts^countryOfOrigin=GB^mode=RORO"}' https://your-site.my-example.xyz/micropub
 ```
 
 A more complex payload can be passed in when using JSON by adding a 'payload' field:
 
 ```bash
-curl -i -X POST -H "Content-Type: application/json" -H "Authorization: Bearer YOUR-TOKEN" -d '{"h": "event", "name": "chicken and beef", "start": "2024-03-25T15:00:00.00Z", "summary": "moving to PortA with ETA 2024-03-25T15:00:00.00Z", "category": ["pre-notification", "isn@btd-1.info-sharing.network"], "payload": {"cnCodes": ["cnchicken123", "cnbeef123"], "commodityDescription": "Chicken 40%, beef 60%", "countryOfOrigin": "GB", "chedNumber": "CN010203", "unitIdentification": {"ContainerNumber": "containerNo123"}, "mode": "RORO", "exporterEORI": "eori-exp-01", "importerEORI": "eori-imp-01"}}' https://your-site.my-example.xyz/micropub
+curl -i -X POST -H "Content-Type: application/json" -H "Authorization: Bearer YOUR-TOKEN" -d '{"h": "event", "name": "chicken and beef", "start": "2024-03-25T15:00:00.00Z", "summary": "moving to PortA with ETA 2024-03-25T15:00:00.00Z", "category": ["pre-notification", "isn@btd-1.info-sharing.network"], "payload": {"cnCodes": ["cnchicken123", "cnbeef123"], "commodityDescription": "Chicken 40%, beef 60%", "countryOfOrigin": "GB", "chedNumbers": ["CN010203"], "unitIdentification": {"ContainerNumber": "containerNo123"}, "mode": "RORO", "exporterEORI": "eori-exp-01", "importerEORI": "eori-imp-01"}}' https://your-site.my-example.xyz/micropub
 ```
 
 > [!NOTE]

@@ -66,7 +66,7 @@ An example of a pre-notification signal could therefore look something like the 
     :cnCodes #{"cnchicken01" "cnbeef02"} ; e.g. minimally resolved cncodes will be four characters/digits long (may be longer or more resolved)
     :countryOfOrigin "GB"
     :commodityDescription "Chicken 40%, beef 60%"
-    :chedNumber #{"CN010203"} ; e.g. either a CHED-D or a CHED-P number
+    :chedNumbers #{"CN010203"} ; e.g. either a CHED-D or a CHED-P number
     ; N.B. unitIdentification is not exhaustive
     :unitIdentification {:containerNumber "containerNo123" :trailerRegistrationNumber "trailerRegNo123"}
     :mode "RORO"
