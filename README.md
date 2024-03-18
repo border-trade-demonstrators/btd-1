@@ -44,7 +44,7 @@ A draft of the [signal payload](https://github.com/information-sharing-networks/
 | Country of origin | Country goods/sample originated from | ISO3166 (E.G. GB) | Required | |
 | Unit identification | A map of identifiers and identifier types (as key/value pairs) for an incoming unit | May be multiples from a set of identifiers (e.g. container number, trailer registration number, VRN, TRN etc) | Required | |
 | TBC Seal ID | A seal identifier | TBC | Optional | |
-| CHED Number | A set of CHED identifier | CHED-P or CHED-D | Optional | |
+| CHED Numbers | A set of CHED identifiers | CHED-P or CHED-D | Optional | |
 | Exporter EORI Number | TBC | TBC | Optional | Must not be provided if it pertains to a sole trader setup or similar - (consortia will need to guarantee they will not provide if this is the case) |
 | Importer EORI Number | TBC | TBC | Optional | Must not be provided if it pertains to a sole trader setup or similar - (consortia will need to guarantee they will not provide if this is the case) |
 | Mode | The goods movement mode | Enumeration (e.g. RORO,TBC) | Required | |
