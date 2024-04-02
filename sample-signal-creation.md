@@ -26,7 +26,7 @@ curl -i -X POST -H "Authorization: Bearer YOUR-TOKEN" -d h=event -d "name=brazil
 It is also possible to create a signal by passing JSON to the micropub endpoint:
 
 ```bash
-curl -i -X POST -H "Content-Type: application/json" -H "Authorization: Bearer YOUR-TOKEN" -d '{"h": "event", "name": "brazil nuts", "start": "2024-03-25T15:00:00.00Z" "summary": "moving to PortA with ETA 2024-03-25T15:00:00.00Z", "category": ["pre-notification", "isn@btd-1.info-sharing.network"], "description": "cnCode=cnNuts^countryOfOrigin=GB^mode=RORO"}' https://your-site.my-example.xyz/micropub
+curl -i -X POST -H "Content-Type: application/json" -H "Authorization: Bearer YOUR-TOKEN" -d '{"h": "event", "name": "brazil nuts", "start": "2024-03-25T15:00:00.00Z", "summary": "moving to PortA with ETA 2024-03-25T15:00:00.00Z", "category": ["pre-notification", "isn@btd-1.info-sharing.network"], "description": "cnCode=cnNuts^countryOfOrigin=GB^mode=RORO"}' https://your-site.my-example.xyz/micropub
 ```
 
 A more complex payload can be passed in when using JSON by adding a 'payload' field:
