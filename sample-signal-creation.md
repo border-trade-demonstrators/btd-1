@@ -5,7 +5,7 @@ N.B. Sample signals listed on this page use Extensible Data Notation (EDN) as a 
 ## About
 
 In order to create [signals](https://github.com/information-sharing-networks/signals) within the ISN a participant may use their participant site and its API.
-Signals are created using an Indieweb 'event' post type by calling the ISN site 'micropub' endpoint internally this creates a 'signal' from the information-sharing-network signals spec.
+Signals are created using an Indieweb 'event' post type by calling the ISN site 'micropub' endpoint, internally this creates a 'signal' compliant with the information-sharing-network signals spec.
 
 ## Sample signals
 The BTD 1 domain is pre-notifications and compliance.
