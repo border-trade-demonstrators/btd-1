@@ -76,25 +76,35 @@ An example of a pre-notification signal could therefore look something like the 
 }
 ```
 
-### Use case 2
+### Payload 2 - Dispatch 
 
-Interventions inititated through processing pre-notification signals will yield information outlining business details and the nature of any non-compliance. This information will enable the updating of risk models and better targeted risk interventions locally.
+A dispatch signal is sent as an update when the vehicle has set off to the port. The signal will carry additional information to support the identification of the unit such as trailer number, expected/actual time of departure to the port of exit. As this information which is more likely to be avaiable closer to the unit being ready and loaded.
 
-Sharing this non compliance efficiently to all relevant border agencies across the country will help mitigate negative impacts of potential port shopping  (traders avoiding targeted controls due to local intelligence not picking up historic non-compliance occuring at other ports) or traders using triangular trade routes to avoid controls (where goods real origin, which dictates whether controls are applicable or not, is obscured).
+The dispatch signal needs to be linked to the original pre-notificaton signal to assit the PHA in correlating the information. 
 
-Where appropriate it may be useful to share examples of non compliance such as incorrect goods information with supply chain actors or other jurisdictions to reduce delay and administrative cost and increase predictability of future goods movements involving these actors.
 
-There will likely be some quicker wins with this use case by linking with existing systems or systems in development.
+| Field name | Description | Data type | Optionality | Notes |
+| --- | --- | --- | --- | --- |
+Ched Numbers|A set of CHED identifiers|CHED-P or CHED-D|Optional||
+cnCodes|Classification of the goods reference |String |TBC ||
+Commodity Description|Plain text description of goods |String|Required|If there are multiple cnCodes how useful is this field ?
+Country Of Origin|Country goods/sample originated from|ISO3166 (E.G. GB)|Required||
+Exporter EORI|Exporter registration number |String|TBC ||
+Importer EORI|Importer registration number |String|TBC ||
+Location|Location of where goods are loaded|String |TBC ||
+Mode|The goods movement mode|Enumeration (e.g. RORO/TBC)|Required||
+Seal numbers|Serial number or reference of seals on unit|String |TBC ||
+Destination Plant|Place of destination of goods |String |TBC ||
+Planned departure time|Time of expected departure from loading location |Date Time ISO 8601|Required||
+Actual departure time|Confirmed time of actaul detarture of goods from loading location |Date Time ISO 8601|Required||
+Port of Exit|Port where the goods are exiting |String (e.g. Calais)|Required||
+Port of Entry|Port where the goods are entering in UK|String (e.g. Dover)|Required||
+Unit Identification|A map of identifiers and identifier types (as key/value pairs) for an incoming unit.|May be multiples from a set of identifiers (e.g. container number trailer registration number/VRN/ TRN etc)|Required||
+Trailer registration number|Registration number of the trailer|String (e.g. WGM033P)|Required||
+Start|Signal creation time and date|Date Time ISO 8601|Required||
+Summary |Combined summary using the predicate, object and subject|string (e.g. Load departed 'Rolpek 2' at 16:07 (local time) on 08/08/2024 bound for 'Calais' with an ETA of 22:00 09/08/2024. Port of entry ‘Dover’|Required||
 
-## Participants
 
-Lead: PHA
-
-UKG: CO, Defra, FSA
-
-Trade associations, standards bodies: C4DTI
-Consortia:
-Experts: TBC (Legal)
 
 ## Required goods categories
 
