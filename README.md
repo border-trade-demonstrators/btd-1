@@ -36,13 +36,13 @@ Two payloads are accepted and the [signal payloads](https://github.com/informati
 | Field name | Description | Data type | Optionality | Notes |
 | --- | --- | --- | --- | --- |
 CHED Numbers|A set of CHED identifiers|CHED-P or CHED-D|Optional||
-cnCodes|Classification of the goods reference |String |TBC ||
+cnCodes|Classification of the goods reference |String |Optional ||
 Commodity Description|Plain text description of goods |String|Required|If there are multiple cnCodes how useful is this field ?
 Country Of Origin|Country goods/sample originated from|ISO3166 (E.G. GB)|Required||
-Exporter EORI|Exporter registration number |String|TBC ||
-Importer EORI|Importer registration number |String|TBC ||
-Location|Location of where goods are loaded|String |TBC ||
-Mode|The goods movement mode|Enumeration (e.g. RORO/TBC)|Required||
+Exporter EORI|Exporter registration number |String|Optional ||
+Importer EORI|Importer registration number |String|Optional ||
+Location|Location of where goods are loaded|String |Optional ||
+Mode|The goods movement mode|Enumeration (only RORO supported in this pilot)|Required||
 Unit Identification|A list of identifiers and identifier types (as key/value pairs) for an incoming unit.|May be multiples from a set of identifiers (e.g. container number trailer registration number/VRN/ TRN etc)|Required||
 Trailer registration number|Registration number of the trailer|String (e.g. WGM033P)|Required||
 
@@ -85,10 +85,10 @@ Optionally, the fields defined in the pre-notification signal can be include wit
 
 | Field name | Description | Data type | Optionality | Notes |
 | --- | --- | --- | --- | --- |
-Seal numbers|Serial number or reference of seals on unit|String |TBC ||
-Destination Plant|Place of destination of goods |String |TBC ||
+Seal numbers|Serial number or reference of seals on unit|String |optional ||
+Destination Plant|Place of destination of goods |String |optoional ||
 Planned departure time|Time of expected departure from loading location |Date Time ISO 8601|Required||
-Actual departure time|Confirmed time of actaul detarture of goods from loading location |Date Time ISO 8601|Required||
+Actual departure time|Confirmed time of actual detarture of goods from loading location |Date Time ISO 8601|Optional||
 Port of Exit|Port where the goods are exiting |String (e.g. Calais)|Required||
 Port of Entry|Port where the goods are entering in UK|String (e.g. Dover)|Required||
 
