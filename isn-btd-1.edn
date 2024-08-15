@@ -35,7 +35,7 @@
            :portOfExit "port of exit name"
            :portOfEntry "port of entry name"
         }
-        :list-payload-keys [:cnCodes :countryOfOrigin]
+        :list-payload-keys [:plannedDepartureTime :actualDepartTime :portofEntry]
         :expiry-days-from-now 14
       }
     }
