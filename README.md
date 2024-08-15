@@ -6,8 +6,7 @@
 
 - [About](https://github.com/border-trade-demonstrators/btd-1#about)
 - [Use case](https://github.com/border-trade-demonstrators/btd-1#use-case)
-- [Paticipants](https://github.com/border-trade-demonstrators/btd-1#participants)
-- [Required goods categories](https://github.com/border-trade-demonstrators/btd-1#required-goods-categories)
+- [Payload definitions](https://github.com/border-trade-demonstrators/btd-1#payload-definitions)
 - [Required capabilities](https://github.com/border-trade-demonstrators/btd-1#required-capabilities)
 - [Mapping to report content and recommendations](https://github.com/border-trade-demonstrators/btd-1#mapping-to-eot-report-content-and-recommendations)
 
@@ -31,19 +30,23 @@ PHA will close a feedback loop by transmitting information to selected BTD parti
 
 Two payloads are accepted and the [signal payloads](https://github.com/information-sharing-networks/signals#example-3---a-signal-and-its-metadata-which-is-associated-to-a-payload-of-information-in-a-given-domain) fields are outlined below.
 
+# Payload definitions
 ## Pre-notification Payload 
 
 | Field name | Description | Data type | Optionality | Notes |
 | --- | --- | --- | --- | --- |
-| Commodity code(s) | Specific commodity codes for the goods | (Multiple cnCodes where the resolution or no. digits varies depending on how much is known about the goods at any time) smallest 4 digits String | Required | |
-| Commodity description | Plain text description of goods | String | Required | If there are multiple cnCodes how useful is this field ? |
-| Country of origin | Country goods/sample originated from | ISO3166 (E.G. GB) | Required | |
-| Unit identification | A map of identifiers and identifier types (as key/value pairs) for an incoming unit | May be multiples from a set of identifiers (e.g. container number, trailer registration number, VRN, TRN etc) | Required | |
-| TBC Seal ID | A seal identifier | TBC | Optional | |
-| CHED Numbers | A set of CHED identifiers | CHED-P or CHED-D | Optional | |
-| Exporter EORI Number | TBC | TBC | Optional | Must not be provided if it pertains to a sole trader setup or similar - (consortia will need to guarantee they will not provide if this is the case) |
-| Importer EORI Number | TBC | TBC | Optional | Must not be provided if it pertains to a sole trader setup or similar - (consortia will need to guarantee they will not provide if this is the case) |
-| Mode | The goods movement mode | Enumeration (e.g. RORO,TBC) | Required | |
+CHED Numbers|A set of CHED identifiers|CHED-P or CHED-D|Optional||
+cnCodes|Classification of the goods reference |String |TBC ||
+Commodity Description|Plain text description of goods |String|Required|If there are multiple cnCodes how useful is this field ?
+Country Of Origin|Country goods/sample originated from|ISO3166 (E.G. GB)|Required||
+Exporter EORI|Exporter registration number |String|TBC ||
+Importer EORI|Importer registration number |String|TBC ||
+Location|Location of where goods are loaded|String |TBC ||
+Mode|The goods movement mode|Enumeration (e.g. RORO/TBC)|Required||
+Unit Identification|A list of identifiers and identifier types (as key/value pairs) for an incoming unit.|May be multiples from a set of identifiers (e.g. container number trailer registration number/VRN/ TRN etc)|Required||
+Trailer registration number|Registration number of the trailer|String (e.g. WGM033P)|Required||
+
+Note for the purpose of this pilot signal we have agreed to use the metadata "start" item is being used to hold an ETA for the movement.
 
 An example of a pre-notification signal could therefore look something like the below:
 
@@ -78,38 +81,23 @@ Optionally, a dispatch signal payload is sent as an update when the vehicle has 
 
 The dispatch signal should be linked to the original pre-notificaton signal using the original correlationId.
 
+Optionally, the fields defined in the pre-notification signal can be include with this payload (in this case the original data will be superceeded with the supplied data).
+
 | Field name | Description | Data type | Optionality | Notes |
 | --- | --- | --- | --- | --- |
-Ched Numbers|A set of CHED identifiers|CHED-P or CHED-D|Optional||
-cnCodes|Classification of the goods reference |String |TBC ||
-Commodity Description|Plain text description of goods |String|Required|If there are multiple cnCodes how useful is this field ?
-Country Of Origin|Country goods/sample originated from|ISO3166 (E.G. GB)|Required||
-Exporter EORI|Exporter registration number |String|TBC ||
-Importer EORI|Importer registration number |String|TBC ||
-Location|Location of where goods are loaded|String |TBC ||
-Mode|The goods movement mode|Enumeration (e.g. RORO/TBC)|Required||
 Seal numbers|Serial number or reference of seals on unit|String |TBC ||
 Destination Plant|Place of destination of goods |String |TBC ||
 Planned departure time|Time of expected departure from loading location |Date Time ISO 8601|Required||
 Actual departure time|Confirmed time of actaul detarture of goods from loading location |Date Time ISO 8601|Required||
 Port of Exit|Port where the goods are exiting |String (e.g. Calais)|Required||
 Port of Entry|Port where the goods are entering in UK|String (e.g. Dover)|Required||
-Unit Identification|A map of identifiers and identifier types (as key/value pairs) for an incoming unit.|May be multiples from a set of identifiers (e.g. container number trailer registration number/VRN/ TRN etc)|Required||
-Trailer registration number|Registration number of the trailer|String (e.g. WGM033P)|Required||
-Start|Signal creation time and date|Date Time ISO 8601|Required||
-Summary |Combined summary using the predicate, object and subject|string (e.g. Load departed 'Rolpek 2' at 16:07 (local time) on 08/08/2024 bound for 'Calais' with an ETA of 22:00 09/08/2024. Port of entry ‘Dover’|Required||
-
-
 
 ## Required capabilities
 
-For detail see the [use cases](https://github.com/border-trade-demonstrators/btd-1#use-cases) above and the [deliverables]() below. N.B. both use cases and deliverables will be developed through user research and workshops.
+Participants in this border trade demonstrator pilot need to meet the following requirements.  See the [use cases](https://github.com/border-trade-demonstrators/btd-1#use-cases) above and the [deliverables]
 
-- Pre-notification via precise selection of fields from underlying EoT or similar system of record transmitted as signals
-- Operationalisation of notification signal if possible/sensible at key border site
-- Multiparty bi-directional exchange of subsequent border process 'insight' as signals
-- Multilateral share (Collaboration Agreement) form of governance framework for interested parties
-- Possibility of access to underlying SoR supply chain data if needed
+- Pre-notification via selection of fields from underlying EoT or similar system of record transmitted as signals
+- Collaboration Agreement must be signed by interested parties
 
 ## Mapping to EoT report content and recommendations
 
