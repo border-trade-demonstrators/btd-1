@@ -32,6 +32,7 @@ Two payloads are accepted and the [signal payloads](https://github.com/informati
 
 # Payload definitions
 ## Pre-notification Payload 
+The technical definition can be found [here](https://github.com/border-trade-demonstrators/btd-1/blob/main/isn-btd-1.edn) and a description of the fields is below.
 
 | Field name | Description | Data type | Optionality | Notes |
 | --- | --- | --- | --- | --- |
