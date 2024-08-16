@@ -38,7 +38,7 @@ The technical definition can be found [here](https://github.com/border-trade-dem
 | --- | --- | --- | --- | --- |
 CHED Numbers|A set of CHED identifiers|CHED-P or CHED-D|Optional||
 cnCodes|Classification of the goods reference |String |Optional ||
-Commodity Description|Plain text description of goods |String|Required|If there are multiple cnCodes how useful is this field ?
+Commodity Description|Plain text description of goods |String|Required|
 Country Of Origin|Country goods/sample originated from|ISO3166 (E.G. GB)|Required||
 Exporter EORI|Exporter registration number |String|Optional ||
 Importer EORI|Importer registration number |String|Optional ||
