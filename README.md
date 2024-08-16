@@ -48,29 +48,34 @@ Trailer registration number|Registration number of the trailer|String (e.g. WGM0
 
 Note for the purpose of this pilot signal we have agreed to use the metadata "start" item is being used to hold an ETA for the movement.
 
-An example of a pre-notification signal could therefore look something like the below:
+Here is example of the JSON that would be used to publish a pre-notification signal to the API
 
-```clojure
+``` json
 {
-  :provider "organisation-a.my-example.xyz"
-  :start "2024-04-01T15:00:00.00Z" ; Indicates an ETA
-  :end "2024-04-20T18:00:00Z"
-  :published "2024-01-08T12:51:51.379072Z"
-  :signalId "704e851a-9ab4-40d6-b995-765f64104072"
-  :correlationId "734713bc04"
-  :category #{"pre-notification" "isn@btd-1.info-sharing.network"}
-  :object "Chicken plus Beef shipment"
-  :predicate "arriving at Port A with ETA 2024-04-01T15:00:00.00Z"
-  :payload {
-    :cnCodes #{"cnchicken01" "cnbeef02"} ; e.g. minimally resolved cncodes will be four characters/digits long (may be longer or more resolved)
-    :countryOfOrigin "GB"
-    :commodityDescription "Chicken 40%, beef 60%"
-    :chedNumbers #{"CN010203"} ; e.g. either a CHED-D or a CHED-P number
-    ; N.B. unitIdentification is not exhaustive
-    :unitIdentification {:containerNumber "containerNo123" :trailerRegistrationNumber "trailerRegNo123"}
-    :mode "RORO"
-    :exporterEORI "EORI-exp-01"
-    :importerEORI "EORI-imp-01"
+  "h": "event",
+  "name": "chicken and beef (movement ref: 955R)",
+  "start": "2024-08-27T09:00:00Z",
+  "summary": "moving to PortA with ETA 2024-08-28T09:00:00Z",
+  "category": [
+    "pre-notification",
+    "isn@btd-1.info-sharing.network"
+  ],
+  "payload": {
+    "chedNumbers": [
+      "CHEDP.GB.2024.1234567"
+    ],
+    "cnCodes": [
+      "1602"
+    ],
+    "commodityDescription": "Other prepared or preserved meat",
+    "countryOfOrigin": "PL",
+    "exporterEORI": "PL12300000004358Z",
+    "importerEORI": "GB123012792073",
+    "location": "Rolpek 2 (50.9457, 16.3523)",
+    "mode": "RORO",
+    "unitIdentification": {
+      "trailerRegistrationNumber": "WGM1234P"
+    }
   }
 }
 ```
@@ -91,6 +96,30 @@ Planned departure time|Time of expected departure from loading location |Date Ti
 Actual departure time|Confirmed time of actual detarture of goods from loading location |Date Time ISO 8601|Optional||
 Port of Exit|Port where the goods are exiting |String (e.g. Calais)|Required||
 Port of Entry|Port where the goods are entering in UK|String (e.g. Dover)|Required||
+
+Here is example of the JSON that would be used to publish a dispatch signal to the API
+
+``` json
+    {
+      "h": "event",
+      "name": "chicken and beef (movement ref: PR0X)",
+      "summary": "movement despatched",
+      "category": [
+        "despatch",
+        "isn@btd-1.info-sharing.network"
+      ],
+      "correlation-id": "ae761d05-a10f-4507-a091-290c987d8b5e",
+      "payload": {
+        "sealNumbers": ["ABC00001", "ABC00002"],
+        "destinationPlant": "Birmingham Central",
+        "plannedDepartureTime": "2024-08-28T07:00:00.367010Z",
+        "actualDepartureTime": "2024-08-29T07:56:16.367010Z",
+        "portOfExit": "Calais",
+        "portOfEntry": "Dover"
+      }
+    }
+```
+
 
 ## Required capabilities
 
