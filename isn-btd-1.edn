@@ -16,11 +16,13 @@
           :location "location of where goods are loaded"
           :countryOfOrigin "country the goods originted in"
           :mode "RORO  (Rail/Air/Maritime not supported in this signal definition)"
+          
           :unitIdentification {
             :trailerRegistrationNumber "TRN should be supplied where available"
             :containerNumber "supply where relevant"
             :tractorRegristratioNumber "VRN for drive accompanied movements"
           }
+          :sampleTestResultsURL "url link to the test result certificate on TWIN"
         }
         :list-payload-keys [:cnCodes :countryOfOrigin]
         :expiry-days-from-now 14
