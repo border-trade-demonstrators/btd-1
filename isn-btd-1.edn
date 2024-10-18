@@ -30,14 +30,27 @@
       :despatch {
         :description "data sent when the vehicle has set off to the port" 
         :properties {
-           :sealNumbers "seals applied to the vehicle"
-           :destinationPlant "location of the destination for the goods"
-           :plannedDepartureTime "Date Time ISO 8601"
-           :actualDepartureTime "Date Time ISO 8601"
-           :portOfExit "port of exit name"
            :portOfEntry "port of entry name"
+           :plannedDepartureTime "Date Time ISO 8601"
+           :portOfExit "port of exit name"
+           :actualDepartureTime "Date Time ISO 8601"
+           :mode "RORO  (Rail/Air/Maritime not supported in this signal definition)"
+           :sealNumbers "seals applied to the vehicle"
+           :chedNumbers "a list of CHED reference numbers related to the movement"
+           :countryOfOrigin "country the goods originted in"
+           :unitIdentification {
+            :trailerRegistrationNumber "TRN should be supplied where available"
+            :containerNumber "supply where relevant"
+            :tractorRegristratioNumber "VRN for drive accompanied movements"
+           }
+           :commodityDescription "a summary description of the goods in the movement"
+           :destinationPlant "location of the destination for the goods"
+           :location "location of where goods are loaded"
+           :cnCodes "a list of Commodity Codes for the goods"
+           :importerEORI "Economic operator ID for the importer"
+           :exporterEORI "Economic operator ID for the exporter"
         }
-        :list-payload-keys [:plannedDepartureTime :actualDepartTime :portofEntry]
+        :list-payload-keys [:plannedDepartureTime :actualDepartureTime :portOfEntry]
         :expiry-days-from-now 14
       }
     }
